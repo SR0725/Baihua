@@ -182,38 +182,55 @@
 
 ## 5. 使用方式
 
-1. **安裝依賴**  
+1. **安裝必要環境**
+   - **安裝 Node.js**
+     ```bash
+     # Windows 使用者可至 https://nodejs.org/ 下載安裝檔
+     
+     # macOS 使用 Homebrew
+     brew install node
+     
+     # Ubuntu/Debian Linux
+     curl -fsSL https://deb.nodesource.com/setup_lts.x | sudo -E bash -
+     sudo apt-get install -y nodejs
+     ```
+   
+   - **安裝 pnpm**
+     ```bash
+     # 使用 npm 安裝 pnpm
+     npm install -g pnpm
+     
+     # 或使用 curl 安裝（Linux/macOS）
+     curl -fsSL https://get.pnpm.io/install.sh | sh -
+     ```
+
+2. **安裝專案依賴**  
    ```bash
    pnpm install
    ```
 
-2. **執行測試**  
+3. **執行測試**  
    ```bash
    pnpm test
    ```
    - 會自動跑 `scanner.test.ts`、`parser.test.ts`、`interpreter.test.ts`、`integration.test.ts` 等。
 
-3. **編譯 TypeScript**  
+4. **編譯 TypeScript**  
    ```bash
    npm run build
    ```
    - 產生 `dist/` 目錄的可執行 JS 檔。
 
-4. **執行白話文程式**  
+5. **執行白話文程式**  
    ```bash
-   npm start examples/hello.hw
+   npm start examples/Exampe1_HelloWorld.baihua
    ```
-   - 其中 `examples/hello.hw` 為範例程式，如：  
+   - 其中 `examples/Exampe1_HelloWorld.baihua` 為範例程式，如：  
      ```
      主程式:
-       輸出 "Hello, 白話文!"
+       輸出 "Hello, World!"
      結束
      ```
-
-5. **在其他程式碼中直接呼叫 (可選)**  
-   - `import { runChineseCode } from "./dist/index";`  
-   - `runChineseCode("令 整數 變數 x 為 10 ...");`
-
 ---
 
 ## 結語
